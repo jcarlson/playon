@@ -1,2 +1,25 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<h1>PlayOn! Events</h1>
+
+<table class="table table-striped">
+  
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Scheduled Date</th>
+      <th>Publisher</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td><%= link_to "1234", "/events/1234" %></td>
+      <td><%= link_to "Jacksonville Sharks @ Georgia Force", "/events/1234" %></td>
+      <td>Sat, Jun 9 2012, 7:00 PM ET</td>
+      <td><%= link_to "Arena Football League", "/publishers/123" %></td>
+      <td><%= link_to "Edit", "/events/1234/edit", :class => "btn btn-mini" %></td>
+    </tr>
+  </tbody>
+  
+</table>
