@@ -13,13 +13,15 @@
   </thead>
   
   <tbody>
+    <% @events.each do |event| %>
     <tr>
-      <td><%= link_to "1234", "/events/1234" %></td>
-      <td><%= link_to "Jacksonville Sharks @ Georgia Force", "/events/1234" %></td>
-      <td>Sat, Jun 9 2012, 7:00 PM ET</td>
-      <td><%= link_to "Arena Football League", "/publishers/123" %></td>
-      <td><%= link_to "Edit", "/events/1234/edit", :class => "btn btn-mini" %></td>
+      <td><%= link_to event.id, event %></td>
+      <td><%= link_to event.name, event %></td>
+      <td><%= event.scheduled_date.strftime "%a, %d %b %Y, %I:%M %p" %></td>
+      <td><%= link_to event.publisher.name, event.publisher %></td>
+      <td><%= link_to "Edit", [:edit, event], :class => "btn btn-mini" %></td>
     </tr>
+    <% end %>
   </tbody>
   
 </table>
