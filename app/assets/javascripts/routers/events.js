@@ -4,8 +4,16 @@ Playon.Routers.Events = Backbone.Router.extend({
         '': 'index'
     },
     
+    initialize: function() {
+        this.collection = new Playon.Collections.Events();
+        this.collection.fetch();
+    },
+    
     index: function() {
-        alert("This is the index action");
+        var view = new Playon.Views.EventsIndex({
+            collection: this.collection
+        });
+        $("#events").html(view.render().el)
     }
     
 });

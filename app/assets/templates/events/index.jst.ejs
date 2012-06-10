@@ -1,0 +1,30 @@
+<table class="table table-striped">
+  
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Scheduled Date</th>
+      <th>Publisher</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+  <% events.forEach(function(event) { %>
+    <tr>
+      <td><%= event.get("id") %></td>
+      <td><%= event.get("name") %></td>
+      <td><%= event.get("scheduled_date") %></td>
+      <td><%= event.get("publisher_id") %></td>
+      <td><a href="/events/<%= event.get("id") %>/edit" class="btn btn-mini">Edit</a></td>
+  <% }); %>
+  </tbody>
+  
+  <tfoot>
+    <tr>
+      <th colspan="5">Showing <%= events.length %> event[s]</th>
+    </tr>
+  </tfoot>
+  
+</table>
