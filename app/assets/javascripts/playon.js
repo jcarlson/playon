@@ -3,7 +3,10 @@ window.Playon = {
   Collections: {},
   Views: {},
   Routers: {},
-  init: function() { alert('Hello from Backbone!'); }
+  init: function() {
+      new Playon.Routers.Events();
+      Backbone.history.start();
+  }
 };
 
 $(function() {
