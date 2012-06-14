@@ -17,7 +17,7 @@
     <tr>
       <td><%= link_to event.id, event %></td>
       <td><%= link_to event.name, event %></td>
-      <td><%= event.scheduled_date.strftime "%a, %d %b %Y, %I:%M %p" %></td>
+      <td><%= event.scheduled_date.strftime "%a, %d %b %Y" %></td>
       <td><%= link_to event.publisher.name, event.publisher %></td>
       <td><%= link_to "Edit", [:edit, event], :class => "btn btn-mini" %></td>
     </tr>
