@@ -15,6 +15,8 @@
 //= require_self
 //= require underscore
 //= require backbone
+//= require date
+//= require datejs-extras
 //
 //= require .//playon
 //
