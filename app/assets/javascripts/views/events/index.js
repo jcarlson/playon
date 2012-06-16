@@ -4,6 +4,7 @@ Playon.Views.EventsIndex = Backbone.View.extend({
     
     initialize: function() {
         this.collection.on("reset", this.render, this);
+        this.collection.fetch();
     },
     
     render: function() {

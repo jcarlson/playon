@@ -1,19 +1,23 @@
 Playon.Routers.Events = Backbone.Router.extend({
     
     routes: {
-        '': 'index'
-    },
-    
-    initialize: function() {
-        this.collection = new Playon.Collections.Events();
-        this.collection.fetch();
+        '': 'index',
+        'events': 'index',
+        'events/:id': 'show'
     },
     
     index: function() {
         var view = new Playon.Views.EventsIndex({
-            collection: this.collection
+            collection: new Playon.Collections.Events()
         });
         $("#events").html(view.render().el)
+    },
+    
+    show: function(id) {
+        var view = new Playon.Views.EventsShow({
+            model: new Playon.Models.Event({id:id})
+        });
+        $("#events").html(view.render().el);
     }
     
 });
