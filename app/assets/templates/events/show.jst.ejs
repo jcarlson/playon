@@ -1,0 +1,23 @@
+<h1><%= event.get('name') %></h1>
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3>Scheduled Date</h3>
+    <p><%= new Date(event.get('scheduled_date')).toString('ddd, dd MMM yyyy') %></p>
+  </div>
+  <div class="span4">
+    <h3>Publisher</h3>
+    <p><%= event.get('publisher_name') %></p>
+  </div>
+</div>
+
+<hr>
+
+<div class="row-fluid">
+  <div class="span12">
+    <div class="well">
+      <a href="/#/events/<%= event.get('id') %>/edit" class="btn btn-primary">Edit</a>
+      <a href="/#/events/<%= event.get('id') %>" class="btn btn-danger" data-method="delete" rel="nofollow">Delete</a>
+    </div>
+  </div>
+</div>
