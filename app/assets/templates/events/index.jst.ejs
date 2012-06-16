@@ -16,7 +16,7 @@
       <td><a href="/events/<%= event.get('id') %>"><%= event.get('id') %></a></td>
       <td><a href="/events/<%= event.get('id') %>"><%= event.get('name') %></a></td>
       <td><%= new Date(event.get('scheduled_date')).toString('ddd, dd MMM yyyy, hh:mm tt') %></td>
-      <td><%= event.get('publisher_id') %></td>
+      <td><%= event.get('publisher_name') %></td>
       <td><a href="/events/<%= event.get('id') %>/edit" class="btn btn-mini">Edit</a></td>
   <% }); %>
   </tbody>
