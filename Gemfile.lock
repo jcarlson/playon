@@ -68,6 +68,9 @@ GEM
     mime-types (1.18)
     multi_json (1.3.6)
     polyglot (0.3.3)
+    rabl (0.6.13)
+      activesupport (>= 2.3.14)
+      multi_json (~> 1.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -122,6 +125,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   datejs-rails (~> 1.1.0)
   jquery-rails
+  rabl
   rails (= 3.2.5)
   sass-rails (~> 3.2.3)
   sqlite3
