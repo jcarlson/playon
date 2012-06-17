@@ -1,0 +1,27 @@
+<h1>PlayOn! Events</h1>
+
+<table class="table table-striped">
+  
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Scheduled Date</th>
+      <th>Publisher</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% for event in @events: %>
+    <tr>
+      <td><a href="/#!/events/<%= event.id %>"><%= event.id %></td>
+      <td><a href="/#!/events/<%= event.id %>"><%= event.name %></td>
+      <td><%= event.scheduled_date %></td>
+      <td><%= event.publisher_name %></td>
+      <td><a href="/#!/events/<%= event.id %>/edit" class="btn btn-mini">Edit</td>
+    </tr>
+    <% end %>
+  </tbody>
+  
+</table>

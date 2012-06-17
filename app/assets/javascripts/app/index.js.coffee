@@ -5,8 +5,8 @@
 #= require spine/ajax
 #= require spine/route
 
-#= require_tree ./lib
 #= require_self
+#= require_tree ./lib
 #= require_tree ./models
 #= require_tree ./controllers
 #= require_tree ./views
@@ -16,9 +16,10 @@ class App extends Spine.Controller
     super
     
     # Initialize controllers:
-    #  @append(@items = new App.Items)
+    @append(@events = new App.Events)
     #  ...
     
-    Spine.Route.setup()    
-
 window.App = App
+
+$ ->
+  new App el: $('#app')
