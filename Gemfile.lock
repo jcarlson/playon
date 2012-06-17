@@ -38,6 +38,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    eco (1.0.0)
+      coffee-script
+      eco-source
+      execjs
+    eco-source (1.1.0.rc.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -88,6 +93,8 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    spine-rails (0.1.0)
+      rails (>= 3.1.0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -109,9 +116,11 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 2.0.2)
   coffee-rails (~> 3.2.1)
+  eco
   jquery-rails
   rabl
   rails (= 3.2.5)
   sass-rails (~> 3.2.3)
+  spine-rails
   sqlite3
   uglifier (>= 1.0.3)
