@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   respond_to :html, :json
   
   def index
-    respond_with(@events = Event.all)
+    respond_with(@events = Event.order(:scheduled_date).page(params[:page]))
   end
   
   def new

@@ -3,7 +3,7 @@ class PublishersController < ApplicationController
   respond_to :json
   
   def index
-    respond_with(@publishers = Publisher.all)
+    respond_with(@publishers = Publisher.order(:name).page(params[:page]))
   end
   
   def new
