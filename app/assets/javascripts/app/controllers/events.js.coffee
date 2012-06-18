@@ -1,16 +1,14 @@
-class App.Events extends Spine.Controller
-  # elements:
-  #   '.items': items
-  # 
-  # events:
-  #   'click .item': 'itemClick'
-  
-  #template: JST['app/views/events/test']
+#= require_tree ./events
 
-  constructor: ->
-    super
-    App.Event.bind("refresh change", @render)
-    App.Event.fetch()
+class App.Events extends Spine.Stack
+  
+  controllers:
+    index: App.EventsIndex
+    show:  App.EventsShow
     
-  render: =>
-    @html @view("events/index")(events: App.Event.all())
+  routes:
+    "!/events/:id": "show"
+    "!/events":     "index"
+    "!/":           "index"
+    "/":            "index"
+  
