@@ -2,16 +2,18 @@ class App.EventsShow extends Spine.Controller
   
   constructor: ->
     super
-    App.Event.bind "refresh", @render
+    @event = new App.Event
+    @event.bind "change", @render
     @active @change
   
   change: (params) =>
-    @currentId = params.id
-    if App.Event.exists(@currentId)
+    if App.Event.exists(params.id)
+      @event.load App.Event.find(params.id).attributes()
       @render()
     else
-      App.Event.fetch(params)
-    
+      @event.load params
+      @event.trigger "change", "reload"
   
-  render: (params) =>
-    @html @view("events/show")(event: App.Event.find(@currentId)) if @currentId
+  render: =>
+    @log "rendering show view"
+    @html @view("events/show")(event: @event) unless @event.isNew()
