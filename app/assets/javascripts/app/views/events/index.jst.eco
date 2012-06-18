@@ -15,11 +15,11 @@
   <tbody>
     <% for event in @events: %>
     <tr>
-      <td><a href="/#!/events/<%= event.id %>"><%= event.id %></td>
-      <td><a href="/#!/events/<%= event.id %>"><%= event.name %></td>
+      <td><a href="#!/events/<%= event.id %>"><%= event.id %></td>
+      <td><a href="#!/events/<%= event.id %>"><%= event.name %></td>
       <td><%= event.scheduled_date %></td>
       <td><%= event.publisher_name %></td>
-      <td><a href="/#!/events/<%= event.id %>/edit" class="btn btn-mini">Edit</td>
+      <td><a href="#!/events/<%= event.id %>/edit" class="btn btn-mini">Edit</td>
     </tr>
     <% end %>
   </tbody>
