@@ -6,5 +6,4 @@ class App.EventsIndex extends Spine.Controller
     @active @render
   
   render: =>
-    @log "rendering index view"
     @html @view("events/index")(events: App.Event.all())

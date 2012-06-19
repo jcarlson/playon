@@ -12,6 +12,5 @@ class App.EventsShow extends Spine.Controller
     @render()
   
   render: =>
-    @log "rendering show view"
     @html @view("events/show")(event: @event) unless @event.isNew()
   
